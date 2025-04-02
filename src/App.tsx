@@ -23,7 +23,7 @@ function App() {
       },
     },
   });
-  
+
   const darkTheme = createTheme({
     palette: {
       mode: 'dark',
@@ -45,16 +45,18 @@ function App() {
   return (
     <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
       <CssBaseline />
-      <main>This is a test</main><p/>
+      <main>This is a test</main><p />
       <Card>
         <CardContent>
-          Card Content<p/>
+          Card Content<p />
           <Button variant='outlined' onClick={() => { setCount(count + 1) }}>Click me {count}</Button><p />
         </CardContent>
       </Card>
-      <TextField value={'Dark'} /><Switch checked={isLight} onChange={() => {
+      <TextField value={'Dark'} color='secondary' />
+      <Switch checked={isLight} onChange={() => {
         setIsLight(!isLight);
-      }} /><TextField value={'Light'} />
+      }} />
+      <TextField value={'Light'} color='primary' />
     </ThemeProvider>
   )
 }
