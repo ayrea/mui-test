@@ -1,5 +1,5 @@
 // import Checkbox from '@mui/material/Checkbox'
-import { Box, Button, Card, CardActions, CardContent, createTheme, CssBaseline, Switch, TextField, ThemeProvider, Typography } from '@mui/material'
+import { Button, Card, CardContent, createTheme, CssBaseline, Paper, Switch, TextField, ThemeProvider } from '@mui/material'
 import { useState } from 'react'
 
 function App() {
@@ -52,6 +52,7 @@ function App() {
           <Button variant='outlined' onClick={() => { setCount(count + 1) }}>Click me {count}</Button><p />
         </CardContent>
       </Card>
+      <Paper>This is paper</Paper>
       <TextField value={'Dark'} color='secondary' />
       <Switch checked={isLight} onChange={() => {
         setIsLight(!isLight);
