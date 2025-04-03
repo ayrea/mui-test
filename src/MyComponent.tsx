@@ -2,9 +2,25 @@
 import { Button, Card, CardContent, Paper, useTheme } from '@mui/material'
 import { useState } from 'react'
 
+interface CounterValue {
+    value: number;
+}
+
+const initialCountValue: CounterValue = {
+    value: 0
+};
+
 function MyComponent() {
-    const [count, setCount] = useState<number>(0);
+    const [count, setCount] = useState<CounterValue>(initialCountValue);
     const theme = useTheme();
+
+    const incCounter = () => {
+        const newCounterValue: CounterValue = {
+            ...count,
+            value: count.value + 1
+        };
+        setCount(newCounterValue);
+    }
 
     return (
         <div>
@@ -12,10 +28,10 @@ function MyComponent() {
             <Card>
                 <CardContent>
                     Card Content<p />
-                    <Button variant='outlined' onClick={() => { setCount(count + 1) }}>Click me {count}</Button><p />
+                    <Button variant='outlined' onClick={() => { incCounter() }}>Click me {count.value}</Button><p />
                 </CardContent>
             </Card>
-            <Paper style={{color: theme.palette.secondary.main}}>This is paper</Paper>
+            <Paper style={{ color: theme.palette.secondary.main }}>This is paper</Paper>
         </div>
     )
 }
