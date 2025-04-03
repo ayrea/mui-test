@@ -3,6 +3,15 @@ import { createTheme, CssBaseline, Switch, TextField, ThemeProvider } from '@mui
 import { useState } from 'react'
 import MyComponent from './MyComponent';
 
+// This example adds several modification to themes. Examples: 
+// - Select a custom colour for "secondary.main".
+// - Specifyitng a custom color that effects a MuiComponent only (see styleOverrides below).
+
+// Further customisation can be made by extending the options available under "secondary".
+// e.g. Instead of just main, dark, light, etc, we can add "darker".
+// Info for this can be found at:
+// https://stackoverflow.com/questions/69514804/material-ui-v4-extending-palettecoloroptions
+
 const lightTheme = createTheme({
   palette: {
     mode: 'light',
