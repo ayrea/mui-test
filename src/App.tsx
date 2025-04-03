@@ -37,6 +37,15 @@ const darkTheme = createTheme({
       contrastText: '#000',
     },
   },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          color: 'yellow',
+        }
+      }
+    }
+  }
 });
 
 function App() {
