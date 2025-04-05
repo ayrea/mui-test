@@ -31,7 +31,8 @@ function MyComponent() {
                     <Button variant='outlined' onClick={() => { incCounter() }}>Click me {count.value}</Button><p />
                 </CardContent>
             </Card>
-            <Paper style={{ color: theme.palette.secondary.main }}>This is paper</Paper>
+            <Paper style={{ color: theme.palette.secondary.main }}>This is paper (secondary.main)</Paper>
+            <Paper style={{ color: theme.palette.primary.veryLight }}>This is paper (primary.veryLight)!!!</Paper>
         </div>
     )
 }

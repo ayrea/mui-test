@@ -1,5 +1,5 @@
 // import Checkbox from '@mui/material/Checkbox'
-import { createTheme, CssBaseline, Switch, TextField, ThemeProvider } from '@mui/material'
+import { createTheme, CssBaseline, PaletteColor, Switch, TextField, ThemeProvider } from '@mui/material'
 import { useState } from 'react'
 import MyComponent from './MyComponent';
 
@@ -12,15 +12,18 @@ import MyComponent from './MyComponent';
 // Info for this can be found at:
 // https://stackoverflow.com/questions/69514804/material-ui-v4-extending-palettecoloroptions
 
+const myPaletteColor: PaletteColor = {
+  light: '#757ce8',
+  main: '#3f50b5',
+  dark: '#002884',
+  contrastText: '#000000',
+  veryLight: 'pink'
+};
+
 const lightTheme = createTheme({
   palette: {
     mode: 'light',
-    primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#000000',
-    },
+    primary: myPaletteColor,
     secondary: {
       light: '#ff7961',
       main: '#0000ff',  // This one
@@ -51,6 +54,13 @@ const darkTheme = createTheme({
       styleOverrides: {
         root: {
           color: 'yellow',
+        }
+      }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'red'  // Notice that setting backgroundColor here also effects the "Card" component
         }
       }
     }
