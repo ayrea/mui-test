@@ -1,9 +1,17 @@
 // import Checkbox from '@mui/material/Checkbox'
-import { createTheme, CssBaseline, PaletteColor, Switch, TextField, ThemeProvider } from '@mui/material'
-import { useState } from 'react'
-import MyComponent from './MyComponent';
+import {
+  createTheme,
+  CssBaseline,
+  PaletteColor,
+  Switch,
+  TextField,
+  ThemeProvider,
+} from "@mui/material";
+import { useState } from "react";
+import MyComponent from "./MyComponent";
+import MyAccordion from "./MyAccordion";
 
-// This example adds several modification to themes. Examples: 
+// This example adds several modification to themes. Examples:
 // - Select a custom colour for "secondary.main".
 // - Specifyitng a custom color that effects a MuiComponent only (see styleOverrides below).
 
@@ -13,58 +21,58 @@ import MyComponent from './MyComponent';
 // https://stackoverflow.com/questions/69514804/material-ui-v4-extending-palettecoloroptions
 
 const myPaletteColor: PaletteColor = {
-  light: '#757ce8',
-  main: '#3f50b5',
-  dark: '#002884',
-  contrastText: '#000000',
-  veryLight: 'pink'
+  light: "#757ce8",
+  main: "#3f50b5",
+  dark: "#002884",
+  contrastText: "#000000",
+  veryLight: "pink",
 };
 
 const lightTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: "light",
     primary: myPaletteColor,
     secondary: {
-      light: '#ff7961',
-      main: '#0000ff',  // This one
-      dark: '#ba000d',
-      contrastText: '#000000',
+      light: "#ff7961",
+      main: "#0000ff", // This one
+      dark: "#ba000d",
+      contrastText: "#000000",
     },
   },
 });
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#fff',
+      light: "#757ce8",
+      main: "#3f50b5",
+      dark: "#002884",
+      contrastText: "#fff",
     },
     secondary: {
-      light: '#ff0000',
-      main: '#00ff00',  // This one
-      dark: '#0000ff',
-      contrastText: '#000',
+      light: "#ff0000",
+      main: "#00ff00", // This one
+      dark: "#0000ff",
+      contrastText: "#000",
     },
   },
   components: {
     MuiCard: {
       styleOverrides: {
         root: {
-          color: 'yellow',
-        }
-      }
+          color: "yellow",
+        },
+      },
     },
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundColor: 'red'  // Notice that setting backgroundColor here also effects the "Card" component
-        }
-      }
-    }
-  }
+          backgroundColor: "red", // Notice that setting backgroundColor here also effects the "Card" component
+        },
+      },
+    },
+  },
 });
 
 function App() {
@@ -74,13 +82,17 @@ function App() {
     <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
       <CssBaseline />
       <MyComponent />
-      <TextField value={'Dark'} />
-      <Switch checked={isLight} onChange={() => {
-        setIsLight(!isLight);
-      }} />
-      <TextField value={'Light'} />
+      <TextField value={"Dark"} />
+      <Switch
+        checked={isLight}
+        onChange={() => {
+          setIsLight(!isLight);
+        }}
+      />
+      <TextField value={"Light"} />
+      <MyAccordion />
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;
