@@ -10,6 +10,8 @@ import {
 import { useState } from "react";
 import MyComponent from "./MyComponent";
 import MyAccordion from "./MyAccordion";
+import BasicModal from "./BasicModal";
+import AlertDialog from "./Dialog";
 
 // This example adds several modification to themes. Examples:
 // - Select a custom colour for "secondary.main".
@@ -91,6 +93,8 @@ function App() {
       />
       <TextField value={"Light"} />
       <MyAccordion />
+      <BasicModal />
+      <AlertDialog />
     </ThemeProvider>
   );
 }
